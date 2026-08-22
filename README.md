@@ -6,33 +6,7 @@ Payroll Checker is a React + TypeScript + Vite web application for auditing empl
 
 Uploaded attendance files are processed in the browser. Do not commit real DTR or biometrics files to GitHub.
 
-## 2. Workflow
-
-```text
-Surname → database check → date range → upload DTR + biometrics
-→ employee/ID/role matching → schedule lookup → real weekday calculation
-→ DTR/biometric matching → attendance validation
-→ Issues / WFH / ABSENT → user verification → Excel export
-```
-
-Excel export is locked until all WFH and ABSENT entries requiring verification have been checked.
-
-## 3. Employee Identification
-
-The surname field checks the stored employee database and displays whether the surname was found.
-
-The two Ramos records must remain distinguishable:
-
-- `RAMOS, H`
-- `RAMOS, J`
-
-The admin surname list currently contains:
-
-`MARTINEZ`, `ALPUTAN`, `DACASIN`, `DEJUAN`, `MAGA`, `PANINGBATAN`, `RAMOS, H`, `RAMOS, J`, `RIOS`, `SABOCO`, `BARBERAN`, `YAP`, `BASCO`.
-
-Employee schedules and admin mappings are maintained in `src/lib/payroll/employeeSchedules.ts`.
-
-## 4. Schedules
+## 2. Schedules
 
 Regular employees use their stored weekday schedules. A `null` weekday means no scheduled work.
 
@@ -40,11 +14,11 @@ Example: MANABAT is scheduled Monday 7:00 AM–7:00 PM and Tuesday–Friday 7:00
 
 Admin employees use the configured admin schedule.
 
-## 5. Date Handling
+## 3. Date Handling
 
 The application supports any valid start/end date range. The actual calendar date determines the weekday; the weekday text written in the DTR is not trusted for schedule validation.
 
-## 6. DTR and Biometrics
+## 4. DTR and Biometrics
 
 The DTR parser supports the project's actual workbook format, including date rows such as `JUNE 26`, `JULY 7`, `JULY 8`, and `JULY 10`.
 
@@ -59,7 +33,7 @@ Recognized DTR conditions include:
 
 Biometric files can contain duplicate taps. The attendance engine consolidates punches so duplicate taps do not become separate attendance events.
 
-## 7. Attendance Checks
+## 5. Attendance Checks
 
 The engine can detect:
 
@@ -74,7 +48,7 @@ The engine can detect:
 - WFH with biometric attendance
 - Other schedule/attendance discrepancies
 
-## 8. Results and Filters
+## 6. Results and Filters
 
 The website provides:
 
@@ -87,7 +61,7 @@ The website provides:
 
 The Issues / Remarks column must explicitly show WFH or ABSENT when the DTR contains those conditions.
 
-## 9. Excel Export
+## 7. Excel Export
 
 The Export Excel button is located below the results/issues list.
 
@@ -95,7 +69,7 @@ Export is disabled while any WFH or ABSENT entry is unverified. After all requir
 
 The output can contain employee information, date/day, status, attendance issues/remarks, and conditional WFH/ABSENT verification columns. WFH/ABSENT records are only included in the final output after the user's verification.
 
-## 10. User Interface
+## 8. User Interface
 
 Current interface features include:
 
@@ -110,7 +84,7 @@ Current interface features include:
 - Visible WFH and ABSENT verification checkboxes
 - Locked/unlocked Excel export
 
-## 11. Project Structure
+## 9. Project Structure
 
 ```text
 src/
@@ -133,7 +107,7 @@ src/
 
 **`workbook.ts`** — spreadsheet reading and Excel report generation.
 
-## 12. Run Locally
+## 10. Run Locally
 
 Requirements: Node.js 18+ (Node 20+ recommended) and npm.
 
@@ -156,7 +130,7 @@ npm run preview
 
 A change should not be considered finished until `npm run build` succeeds.
 
-## 13. Troubleshooting
+## 11. Troubleshooting
 
 ### Old website version
 
@@ -178,19 +152,7 @@ Confirm the DTR row contains a recognizable date and a remark containing `ABSENT
 
 This is intentional. Verify every WFH/ABSENT entry first.
 
-## 14. Sample Acceptance Test
-
-For the sample MANABAT files, the website is expected to show:
-
-| Date | Expected result |
-|---|---|
-| July 7, 2026 | ABSENT + visible unchecked absence verification |
-| July 8, 2026 | WFH + visible unchecked WFH verification |
-| July 10, 2026 | WFH + visible unchecked WFH verification |
-
-The user must verify these entries before Excel export is enabled.
-
-## 15. Future Improvements
+## 12. Future Improvements
 
 - Dedicated employee master database with employee ID, full name, role, and schedule.
 - More robust name matching across files.
