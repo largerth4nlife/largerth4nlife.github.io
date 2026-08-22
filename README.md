@@ -1,4 +1,4 @@
-# Payroll Checker — System Documentation
+# Payroll Checker
 
 ## 1. Purpose
 
