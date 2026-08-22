@@ -74,45 +74,7 @@ The engine can detect:
 - WFH with biometric attendance
 - Other schedule/attendance discrepancies
 
-## 8. WFH Rules
-
-If the DTR says WFH and there are no biometrics:
-
-1. Show WFH in the website's **Issues / Remarks** column.
-2. Show a visible **Confirm WFH** checkbox.
-3. Keep the entry unverified until the user checks it.
-4. Do not treat the DTR remark alone as proof that work was completed.
-5. Keep Excel export locked until the WFH entry is verified.
-
-Example:
-
-```text
-WORK FROM HOME — WORK FROM HOME DUE TO TYPHOON
-☐ Confirm WFH
-```
-
-After checking:
-
-```text
-WORK FROM HOME — WORK FROM HOME DUE TO TYPHOON
-☑ WFH confirmed
-```
-
-If WFH has biometric attendance, the conflict can be flagged as an issue.
-
-## 9. ABSENT Rules
-
-If the DTR says ABSENT and there are no biometrics:
-
-1. Show ABSENT in **Issues / Remarks**.
-2. Show a visible **Confirm absence** checkbox.
-3. Keep the entry unverified until the user checks it.
-4. Do not treat the DTR remark alone as proof that required documentation was submitted.
-5. Keep Excel export locked until the absence is verified.
-
-If ABSENT has biometric attendance, flag it as an issue.
-
-## 10. Results and Filters
+## 8. Results and Filters
 
 The website provides:
 
@@ -125,7 +87,7 @@ The website provides:
 
 The Issues / Remarks column must explicitly show WFH or ABSENT when the DTR contains those conditions.
 
-## 11. Excel Export
+## 9. Excel Export
 
 The Export Excel button is located below the results/issues list.
 
@@ -133,7 +95,7 @@ Export is disabled while any WFH or ABSENT entry is unverified. After all requir
 
 The output can contain employee information, date/day, status, attendance issues/remarks, and conditional WFH/ABSENT verification columns. WFH/ABSENT records are only included in the final output after the user's verification.
 
-## 12. User Interface
+## 10. User Interface
 
 Current interface features include:
 
@@ -148,7 +110,7 @@ Current interface features include:
 - Visible WFH and ABSENT verification checkboxes
 - Locked/unlocked Excel export
 
-## 13. Project Structure
+## 11. Project Structure
 
 ```text
 src/
@@ -171,7 +133,7 @@ src/
 
 **`workbook.ts`** — spreadsheet reading and Excel report generation.
 
-## 14. Run Locally
+## 12. Run Locally
 
 Requirements: Node.js 18+ (Node 20+ recommended) and npm.
 
@@ -194,59 +156,7 @@ npm run preview
 
 A change should not be considered finished until `npm run build` succeeds.
 
-## 15. Beginner Git Guide
-
-### Get the newest code
-
-```bash
-git pull origin main
-```
-
-### See changes
-
-```bash
-git status
-```
-
-### Add changes
-
-```bash
-git add .
-```
-
-Or add one file:
-
-```bash
-git add src/PayrollCheckerPage.tsx
-```
-
-### Commit
-
-```bash
-git commit -m "Describe the change"
-```
-
-A commit is a saved checkpoint.
-
-### Push to GitHub
-
-```bash
-git push origin main
-```
-
-### Recommended routine
-
-```bash
-git pull origin main
-# make your edits
-npm run build
-git status
-git add .
-git commit -m "Describe the change"
-git push origin main
-```
-
-## 16. Troubleshooting
+## 13. Troubleshooting
 
 ### Old website version
 
@@ -268,7 +178,7 @@ Confirm the DTR row contains a recognizable date and a remark containing `ABSENT
 
 This is intentional. Verify every WFH/ABSENT entry first.
 
-## 17. Sample Acceptance Test
+## 14. Sample Acceptance Test
 
 For the sample MANABAT files, the website is expected to show:
 
@@ -280,7 +190,7 @@ For the sample MANABAT files, the website is expected to show:
 
 The user must verify these entries before Excel export is enabled.
 
-## 18. Future Improvements
+## 15. Future Improvements
 
 - Dedicated employee master database with employee ID, full name, role, and schedule.
 - More robust name matching across files.
