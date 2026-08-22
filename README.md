@@ -4,6 +4,8 @@
 
 Payroll Checker is a React + TypeScript + Vite web application for auditing employee attendance. The user provides an employee surname, date range, DTR workbook, and biometrics workbook. The application identifies the employee, retrieves the stored schedule, matches DTR and biometric attendance, detects discrepancies, and produces an Excel report.
 
+**Current scope:** This website is currently personalized for a specific company. Employee schedules, admin records, attendance rules, and related data are configured for that company's current workflow. A separate, more general-purpose version of the Payroll Checker is planned for future development so it can be adapted for use by other companies and organizations.
+
 Uploaded attendance files are processed in the browser. Do not commit real DTR or biometrics files to GitHub.
 
 ## 2. Schedules
@@ -160,3 +162,4 @@ This is intentional. Verify every WFH/ABSENT entry first.
 - Better DTR coverage validation.
 - More detailed Excel formatting.
 - Additional official HR attendance rules.
+- Separate general-purpose version that is not tied to a specific company's employees, schedules, admin list, or attendance configuration.
