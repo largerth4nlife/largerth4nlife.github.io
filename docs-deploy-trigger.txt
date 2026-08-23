@@ -1,0 +1,1 @@
+GitHub Pages deployment trigger. Docs is the default page in src/main.tsx.
