@@ -4,5 +4,5 @@ export function DocumentationPage(){
     <section className="docs-section"><h2>Download the project locally</h2><p>You can download the project using Git from a terminal. Make sure Git and Node.js are installed first.</p><div className="docs-step"><h3>1. Clone the repository</h3><pre><code>git clone https://github.com/largerth4nlife/largerth4nlife.github.io.git</code></pre></div><div className="docs-step"><h3>2. Open the project folder</h3><pre><code>cd largerth4nlife.github.io</code></pre></div><div className="docs-step"><h3>3. Install dependencies</h3><pre><code>npm install</code></pre></div><div className="docs-step"><h3>4. Start the local development server</h3><pre><code>npm run dev</code></pre><p>Vite will display the local address in your terminal. Open that address in your browser.</p></div></section>
     <section className="docs-section"><h2>Build the project</h2><p>To create a production build:</p><pre><code>npm run build</code></pre><p>The generated files will be placed in the project's <code>dist</code> directory.</p></section>
     <section className="docs-section"><h2>Update your local copy</h2><p>If you already cloned the repository and want the latest version:</p><pre><code>git pull</code></pre></section>
-  </main></div>
+  </div></main>
 }
