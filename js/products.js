@@ -1,0 +1,8 @@
+const PRODUCTS = [
+  {id:'classic-card',name:'Classic NFC Card',category:'Cards',price:499,tag:'BESTSELLER',description:'A clean digital business card for your everyday introductions.',features:['NFC-enabled card','No app required','Programmable destination URL','QR backup ready'],style:'dark'},
+  {id:'social-card',name:'Social NFC Card',category:'Cards',price:449,tag:'SOCIALS',description:'Put your social profile, portfolio or link hub behind one simple tap.',features:['NFC-enabled card','Ideal for social profiles','Programmable destination URL','QR backup ready'],style:'light'},
+  {id:'review-card',name:'Review NFC Card',category:'Business',price:449,tag:'BUSINESS',description:'Make it easy for customers to reach your review page after a great experience.',features:['NFC-enabled card','Review-link ready','Programmable destination URL','Compact card format'],style:'review'},
+  {id:'custom-card',name:'Custom NFC Card',category:'Custom',price:599,tag:'CUSTOM',description:'Your logo, your details and your destination — prepared as a branded NFC card.',features:['Custom artwork','NFC-enabled card','Programmable destination URL','Logo upload supported'],style:'dark'},
+  {id:'nfc-keychain',name:'NFC Keychain',category:'Accessories',price:299,tag:'ACCESSORY',description:'A compact NFC accessory for quick profile or business sharing.',features:['NFC-enabled keychain','No app required','Programmable destination URL'],style:'light'},
+  {id:'review-stand',name:'NFC Review Stand',category:'Business',price:499,tag:'BUSINESS',description:'A countertop NFC sign designed to make review requests effortless.',features:['NFC-enabled stand','Countertop format','Programmable destination URL','QR backup ready'],style:'review'}
+];
